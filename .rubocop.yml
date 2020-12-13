@@ -1,4 +1,5 @@
 require: rubocop-rails
+require: rubocop-rspec
 
 AllCops:
   NewCops: enable
@@ -6,10 +7,20 @@ AllCops:
 Layout/LineLength:
   Exclude:
     - config/initializers/devise.rb
+    - bin/bundle
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - bin/bundle
 
 Metrics/MethodLength:
   Exclude:
     - db/migrate/*
+    - bin/bundle
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - bin/bundle
 
 Style/Documentation:
   Enabled: false
